@@ -1,16 +1,17 @@
 import re, os, subprocess
 from dataclasses import dataclass, asdict, field
 
-#
+#basic text filtering
 PAUSE_RE     = re.compile(r'[\-]{2,}')
 STRIPTAGS_RE = re.compile(r'<.+?>')
 GRAMMAR_RE   = re.compile(r'[^\w\n ,!?();\-\.]', re.I)
 
+#main paths
 CWD          = os.getcwd()
 TTSDIR       = '\\'.join(__file__.split('\\')[:-1])
 TTSSAVE      = os.path.join(CWD, 'tts_wav')
 
-if not os.path.isdir(TTSSAVE): os.mkdir(TTSSAVE)
+if not os.path.isdir(TTSSAVE): os.mkdir(TTSSAVE) #create if necessary
 
 
 @dataclass #base TTS object
@@ -119,7 +120,7 @@ class Balcon(TTS):
     #balcon stop cmd    
     def stop(self):
         if self.reading: 
-            subprocess.Popen((BALCONEXE, '-ka')) #kill all
+            subprocess.Popen((BALCONEXE, '-ka')) #kill active
             
     # `data` can be text or a file path
     def say(self, data:str, towav:bool=False):
