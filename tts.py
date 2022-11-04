@@ -19,7 +19,6 @@ class TTS:
     voice  :str = '' 
     pitch  :int = 0  
     speed  :int = 0  
-    draw   :int = 0  
     volume :int = 100
     
     @property
@@ -69,6 +68,8 @@ ESPEAKVOICE = re.compile(r'!v\\([\w]+)')
 
 @dataclass
 class ESpeak(TTS):
+    gap :int = 0
+    
     @property #get available voices as a list by parsing stdout
     def voices(self):
         cmd = (ESPEAKEXE, '--voices=variant')
@@ -87,7 +88,7 @@ class ESpeak(TTS):
              '-v', f'{self.voice}' , #set voice +m1-7 +f1-4
              '-s', f'{self.speed}' , #set speed in words-per-minute 
              '-p', f'{self.pitch}' , #adjust pitch 0 to 99
-             '-g', f'{self.draw}'  , #pause between words in units of 10ms
+             '-g', f'{self.gap}'   , #pause between words in units of 10ms
              '-a', f'{self.volume}', #set amplitude 0 to 200
              *data)
         )
@@ -104,7 +105,8 @@ BALCONEXE  = os.path.join(BALCONPATH, 'balcon')
 
 @dataclass
 class Balcon(TTS):
-    gap   :int = 0  #length of pause after paragraph (ms)
+    sgap   :int = 0  #length of pause after paragraph (ms)
+    pgap   :int = 0  #length of pause after paragraph (ms)
     
     @property #get available voices as a list by parsing stdout
     def voices(self) -> list[str]:
@@ -132,8 +134,8 @@ class Balcon(TTS):
              '-n' , self.voice      , #sets the voice
              '-s' , f'{self.speed}' , #set speed -10 to 10
              '-p' , f'{self.pitch}' , #adjust pitch -10 to 10
-             '-e' , f'{self.draw}'  , #pause between sentences in ms
-             '-a' , f'{self.gap}'   , #pause between paragraphs in ms
+             '-e' , f'{self.sgap}'  , #pause between sentences in ms
+             '-a' , f'{self.pgap}'  , #pause between paragraphs in ms
              '-v' , f'{self.volume}', #volume 0 to 100
              towav, path) 
         )
