@@ -25,5 +25,7 @@ You can save the speech to `.wav` by either calling `.save(text_or_filepath)` or
 
 Balcon has a `.toggle` method that can pause/resume speech
 
+Both `Balcon` and `ESpeak` classes extend `TTS`. I think I made `TTS` generic enough to be easily extended for other tts command line engines
+
 * [Balcon commands](http://www.cross-plus-a.com/bconsole.htm)
 * [ESpeak commands](https://espeak.sourceforge.net/commands.html)
