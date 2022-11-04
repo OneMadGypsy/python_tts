@@ -7,6 +7,7 @@ You must provide your own Balcon and/or ESpeak executables, and dependencies. Ma
 
 Below is every possible thing you can do. Balcon has one more feature than ESpeak ~ pause/resume can be toggled. The only discrepency in attributes between `Balcon` and `ESpeak` are `gap` related. ESpeak only has one form of gap, the pause between words in 10ms units. Balcon has two gaps. The pause after sentences in ms (`sgap`) and the pause after paragraphs in ms (`pgap`).
 
+
 ```python3
 import tts
 
@@ -33,7 +34,7 @@ print(speaker.voices)        #list of available voices
 ```
 
 
-You can save the speech to `.wav` by either calling `.save(text_or_filepath)` or `.say(text_or_filepath, True)`. This will name the `wav` with the current timestamp, and save in a `tts_wav` directory that is created in whatever path `os.getcwd()` returns.
+Saving will name the `wav` with the current timestamp, and save it in a `tts_wav` directory that is created in `os.getcwd()`.
 
 If you'd like to add more features to my script or determine the acceptable values:
 
