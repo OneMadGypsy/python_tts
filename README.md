@@ -5,7 +5,7 @@ Very basic python bindings for ESpeak and Balcon. My only goal with this script 
 You must provide your own Balcon and/or ESpeak executables, and dependencies. Make sure you place them in the respective folders. These folders must be in the same directory as `tts.py`
 
 
-Below is every possible thing you can do. Balcon has one more feature than ESpeak ~ pause/resume can be toggled.
+Below is every possible thing you can do. Balcon has one more feature than ESpeak ~ pause/resume can be toggled. Balcon has one more attribute than Espeak ~ `gap` pause between paragraphs in ms.
 
 ```python3
 import tts
@@ -20,7 +20,7 @@ speaker.save("c:/myfile.txt")#save wave from file text
 print(speaker.voices)        #list of available voices
 
 
-speaker = tts.Balcon(voice='Hazel',pitch=2,speed=2,draw=20,volume=100)
+speaker = tts.Balcon(voice='Hazel',pitch=2,speed=2,draw=20,gap=20,volume=100)
 speaker.say("hello world")   #say text
 speaker.say("c:/myfile.txt") #read file
 speaker.toggle()             #pause
