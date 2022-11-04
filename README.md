@@ -5,7 +5,7 @@ Very basic python bindings for ESpeak and Balcon. My only goal with this script 
 You must provide your own Balcon and/or ESpeak executables, and dependencies. Make sure you place them in the respective folders. These folders must be in the same directory as `tts.py`
 
 
-Below is every possible thing you can do. Balcon has one more feature than ESpeak ~ pause/resume can be toggled. The only discrepency in attributes between `Balcon` and `ESpeak` are `gap` related. ESpeak only has one form of gap, the pause between words in 10ms units. Balcon has two gaps. The pause after sentences in ms (`sgap`) and the pause after paragraphs in ms (`pgap`).
+Below is every possible thing you can do. Balcon has one more feature than ESpeak ~ pause/resume can be toggled. The only discrepency in attributes between `Balcon` and `ESpeak` are `gap` related. ESpeak only has one form of gap - the pause between words in 10ms units. Balcon has two gaps - the pause after sentences in ms (`sgap`) and the pause after paragraphs in ms (`pgap`).
 
 
 ```python3
