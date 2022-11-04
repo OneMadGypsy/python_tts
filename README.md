@@ -5,7 +5,7 @@ Very basic python bindings for ESpeak and Balcon. My only goal with this script 
 You must provide your own Balcon and/or ESpeak executables, and dependencies. Make sure you place them in the respective folders. These folders must be in the same directory as `tts.py`
 
 
-Below is every possible thing you can do
+Below is every possible thing you can do. Balcon has one more feature than ESpeak ~ pause/resume can be toggled.
 
 ```python3
 import tts
@@ -35,7 +35,7 @@ print(speaker.voices)        #list of available voices
 
 You can save the speech to `.wav` by either calling `.save(text_or_filepath)` or `.say(text_or_filepath, True)`. This will name the `wav` with the current timestamp, and save in a `tts_wav` directory that is created in whatever path `os.getcwd()` returns.
 
-Both `Balcon` and `ESpeak` classes extend `TTS`. I think I made `TTS` generic enough to be easily extended for other tts command line engines
+Both `Balcon` and `ESpeak` classes extend `TTS`. I think I made `TTS` generic enough to be easily extended for other tts command line engines.
 
 Below are the "docs" for Balcon and Espeak commands, if you'd like to add more features to my script.
 
