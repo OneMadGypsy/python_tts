@@ -13,7 +13,7 @@ import tts
 speaker = tts.ESpeak(voice='+f3',pitch=50,speed=175,draw=2,volume=200)
 speaker.say("hello world")   #say text
 speaker.say("c:/myfile.txt") #read file
-print(speaker.reading)       #I'm trying to pass this off as a 'is_reading' property, but it's really a `is_process_still_open` property
+print(speaker.reading)       #'is_reading' property, but it's really an `is_process_still_open` property
 speaker.stop()               #kill process
 speaker.save("hello world")  #save only ~ no speaking
 speaker.save("c:/myfile.txt")#save wave from file text
