@@ -2,11 +2,12 @@
 Very basic python bindings for ESpeak and Balcon
 
 
-You must have Balcon and/or ESpeak in a `balcon` and/or `espeak` directory (respectively), in the same directory as `tts.py`.
+In the same directory as `tts.py`, you must have Balcon and/or ESpeak in a `balcon` and/or `espeak` directory (respectively).
 
 
 usage:
-```
+
+```python3
 import tts
 
 speaker = tts.ESpeak(voice='+f3',pitch=50,speed=175,draw=2)
