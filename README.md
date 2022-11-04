@@ -1,5 +1,5 @@
 # python_tts
-Very basic python bindings for ESpeak and Balcon
+Very basic python bindings for ESpeak and Balcon. My only goal with this script was to homogenize the most obvious and basic features between the 2 engines.
 
 
 In the same directory as `tts.py`, you must have the Balcon and/or ESpeak executables, and dependencies, in a `balcon` and/or `espeak` directory (respectively).
@@ -26,6 +26,8 @@ You can save the speech to `.wav` by either calling `.save(text_or_filepath)` or
 Balcon has a `.toggle` method that can pause/resume speech
 
 Both `Balcon` and `ESpeak` classes extend `TTS`. I think I made `TTS` generic enough to be easily extended for other tts command line engines
+
+Below are the "docs" for Balcon and Espeak commands, if you'd like to add more features to my script.
 
 * [Balcon commands](http://www.cross-plus-a.com/bconsole.htm)
 * [ESpeak commands](https://espeak.sourceforge.net/commands.html)
