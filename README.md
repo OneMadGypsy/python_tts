@@ -35,9 +35,7 @@ print(speaker.voices)        #list of available voices
 
 You can save the speech to `.wav` by either calling `.save(text_or_filepath)` or `.say(text_or_filepath, True)`. This will name the `wav` with the current timestamp, and save in a `tts_wav` directory that is created in whatever path `os.getcwd()` returns.
 
-Both `Balcon` and `ESpeak` classes extend `TTS`. I think I made `TTS` generic enough to be easily extended for other tts command line engines.
-
-Below are the "docs" for Balcon and Espeak commands, if you'd like to add more features to my script or determine the acceptable values.
+If you'd like to add more features to my script or determine the acceptable values:
 
 * [Balcon commands](http://www.cross-plus-a.com/bconsole.htm)
 * [ESpeak commands](https://espeak.sourceforge.net/commands.html)
