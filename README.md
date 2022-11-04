@@ -2,7 +2,7 @@
 Very basic python bindings for ESpeak and Balcon
 
 
-In the same directory as `tts.py`, you must have Balcon and/or ESpeak in a `balcon` and/or `espeak` directory (respectively).
+In the same directory as `tts.py`, you must have the Balcon and/or ESpeak executables, and dependencies, in a `balcon` and/or `espeak` directory (respectively).
 
 
 usage:
