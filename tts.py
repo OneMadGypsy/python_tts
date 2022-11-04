@@ -68,7 +68,7 @@ ESPEAKVOICE = re.compile(r'!v\\([\w]+)')
 
 @dataclass
 class ESpeak(TTS):
-    gap :int = 0
+    gap :int = 0 #pause between words in 10ms units
     
     @property #get available voices as a list by parsing stdout
     def voices(self):
@@ -90,7 +90,7 @@ class ESpeak(TTS):
              '-p', f'{self.pitch}' , #adjust pitch 0 to 99
              '-a', f'{self.volume}', #set amplitude 0 to 200
              '-g', f'{self.gap}'   , #pause between words in units of 10ms
-             *data)
+             *data                 ) #set sources
         )
 
 
@@ -105,7 +105,7 @@ BALCONEXE  = os.path.join(BALCONPATH, 'balcon')
 
 @dataclass
 class Balcon(TTS):
-    sgap   :int = 0  #length of pause after paragraph (ms)
+    sgap   :int = 0  #length of pause after sentence (ms)
     pgap   :int = 0  #length of pause after paragraph (ms)
     
     @property #get available voices as a list by parsing stdout
@@ -130,7 +130,7 @@ class Balcon(TTS):
         
         self._sp = subprocess.Popen(
             (BALCONEXE, 
-             src  , data            , 
+             src  , data            , #set source
              '-n' , self.voice      , #sets the voice
              '-s' , f'{self.speed}' , #set speed -10 to 10
              '-p' , f'{self.pitch}' , #adjust pitch -10 to 10
