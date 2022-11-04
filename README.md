@@ -37,7 +37,7 @@ You can save the speech to `.wav` by either calling `.save(text_or_filepath)` or
 
 Both `Balcon` and `ESpeak` classes extend `TTS`. I think I made `TTS` generic enough to be easily extended for other tts command line engines.
 
-Below are the "docs" for Balcon and Espeak commands, if you'd like to add more features to my script.
+Below are the "docs" for Balcon and Espeak commands, if you'd like to add more features to my script or determine the acceptable values.
 
 * [Balcon commands](http://www.cross-plus-a.com/bconsole.htm)
 * [ESpeak commands](https://espeak.sourceforge.net/commands.html)
