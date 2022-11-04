@@ -8,7 +8,7 @@ GRAMMAR_RE   = re.compile(r'[^\w\n ,!?();\-\.]', re.I)
 
 CWD          = os.getcwd()
 TTSDIR       = '\\'.join(__file__.split('\\')[:-1])
-TTSSAVE      = os.path.join(CWD, 'tts')
+TTSSAVE      = os.path.join(CWD, 'tts_wav')
 
 if not os.path.isdir(TTSSAVE): os.mkdir(TTSSAVE)
 
