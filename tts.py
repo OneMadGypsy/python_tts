@@ -88,8 +88,8 @@ class ESpeak(TTS):
              '-v', f'{self.voice}' , #set voice +m1-7 +f1-4
              '-s', f'{self.speed}' , #set speed in words-per-minute 
              '-p', f'{self.pitch}' , #adjust pitch 0 to 99
-             '-g', f'{self.gap}'   , #pause between words in units of 10ms
              '-a', f'{self.volume}', #set amplitude 0 to 200
+             '-g', f'{self.gap}'   , #pause between words in units of 10ms
              *data)
         )
 
